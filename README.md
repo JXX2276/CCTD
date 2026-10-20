@@ -43,8 +43,7 @@ python CCTD.py
 ```
 
 The default configuration evaluates Beijing and Wuhan with MSI/SAR guidance,
-and Florence with PAN guidance, over all six simulated noise cases. Each run
-uses 5001 optimization iterations and seed `3407`.
+and Florence with PAN guidance, over all six simulated noise cases.
 
 Results are saved under:
 
@@ -55,8 +54,6 @@ output/<dataset>/case<noise_case>/
 |-- metrics.json          # PSNR, SSIM, ERGAS, SAM, and elapsed time
 `-- psnr_history.json     # PSNR logged during optimization
 ```
-
-The code does not generate image visualizations.
 
 ## Ablation experiments
 
