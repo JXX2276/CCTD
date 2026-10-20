@@ -75,22 +75,23 @@ python ablation_modeling_strategies.py
 # Multi-channel versus channel-compressed guidance
 python ablation_single_channel_guidance.py
 ```
-
-Each script writes per-run `.mat` reconstructions and metrics, plus a JSON/CSV
-summary, under `output_ablation/`. For a quick environment smoke test, append
-`--max_iter 10`; this does not reproduce the reported results.
-
-## Data format
-
-Every dataset is a MATLAB `.mat` file containing an HSI under the `hsi` key
-and a guidance image under one of `msi`, `sar`, or `pan`. The HSI must have
-shape `(height, width, bands)`. Guidance may be two-dimensional (PAN) or have
-shape `(height, width, channels)` (MSI/SAR). Guidance images are resized to
-the HSI spatial resolution during preprocessing.
-
-## Notes
-
-- The first execution on a dataset synthesizes the selected noise case from
-  the clean HSI using the fixed seed.
-- A GPU substantially reduces the per-image optimization time.
-- Do not use the smoke-test iteration count for quantitative comparisons.
+## Citation
+If you use this code in your research, please cite the corresponding paper:
+```
+@article{CCTD,
+  title   = {Unified Guided Hyperspectral Image Denoising by Continuous Coupled Tucker Decomposition},
+  author  = {Ji Xiaoxuan and
+             Li Pengxian and
+             Wang, Jialin and
+             Xu Shuang and
+             Ji Teng-Yu and
+             Peng Jiangjun and
+             Cao Xiangyong and
+             Meng Deyu},
+  journal = {IEEE Transactions on Geoscience and Remote Sensing},
+  volume  = {64},
+  year    = {2026},
+  doi     = {10.1109/TGRS.2026.3708294},
+  url     = {https://ieeexplore.ieee.org/document/11586087}
+}
+```
